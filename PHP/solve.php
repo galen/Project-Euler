@@ -14,8 +14,6 @@ if ( file_exists( ( $solution = sprintf( 'solutions/%s.php', $argv[1] ) ) ) ) {
 }
 
 foreach( glob( 'solutions/*.php' ) as $solution ) {
-
 	$solution_number = basename( $solution, '.php' );
 	run_solution( $solution_number );
-
 }
