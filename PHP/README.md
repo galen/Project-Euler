@@ -6,4 +6,4 @@ Show all solutions
 
 Show specific solution
 
-	php solve.php 01
+	php solve.php 1
