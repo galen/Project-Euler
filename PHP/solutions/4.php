@@ -7,7 +7,6 @@ function solution_4() {
 			if ( $s == strrev( $s ) && $s > $largest ) {
 				$largest = $s;
 			}
-	
 		}
 	}
 	return $largest;

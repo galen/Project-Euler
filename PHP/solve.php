@@ -1,10 +1,13 @@
 <?php
 
+require( 'lib.php' );
+
 function run_solution( $solution_number ) {
 	require( 'solutions/' . $solution_number . '.php' );
 	$start = microtime( true );
 	$function = 'solution_'.$solution_number;
-	echo sprintf( "Solving problem %s: %s (%ss)\n", $solution_number, $function(), $time = round( microtime( true ) - $start, 6 ) );
+	echo sprintf( "Solving problem %s: ", $solution_number );
+	echo sprintf( "%s (%ss)\n", $function(), $time = round( microtime( true ) - $start, 6 ) );
 	return $times[$solution_number] = $time;
 }
 
@@ -14,7 +17,9 @@ if ( file_exists( ( $solution = sprintf( 'solutions/%s.php', $argv[1] ) ) ) ) {
 	exit;
 }
 
-foreach( glob( 'solutions/*.php' ) as $solution ) {
+$files = glob( 'solutions/*.php' );
+
+foreach( $files as $solution ) {
 	$solution_number = basename( $solution, '.php' );
 	$times[] = run_solution( $solution_number );
 }
