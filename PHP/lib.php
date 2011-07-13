@@ -34,3 +34,12 @@ function is_permutation( $array ) {
 	return false;
 
 }
+
+function get_divisor_count( $n ) {
+	for( $i=1;$i<ceil(sqrt($n));$i++ ) {
+		if ( $n % $i == 0 ) {
+			$c++;
+		}
+	}
+	return $c*2;
+}
