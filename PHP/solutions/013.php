@@ -103,10 +103,10 @@ function solution_13() {
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690';
 
-	return substr( number_format( array_reduce( explode( "\n", $raw_data ), function( $t, $n ) { return bcadd( $t, $n, 2 ); } ), 0, '', '' ), 0, 10 );
+	return substr( array_reduce( explode( "\n", $raw_data ), function( $t, $n ) { return bcadd( $t, $n, 2 ); } ), 0, 10 );
 
 }
 
 function answer_13() {
-	return 142913828922;
+	return 5537376230;
 }
