@@ -32,6 +32,7 @@ function convert( $n ) {
 		90	=> 'ninety',
 		100	=> 'hundred'
 	);
+	
 	switch( strlen( $n ) ) {
 		case 1:
 			$length .= $data[$n];
@@ -53,6 +54,7 @@ function convert( $n ) {
 			break;
 	}
 	return $length;
+
 }
 
 
