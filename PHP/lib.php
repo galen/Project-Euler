@@ -1,7 +1,7 @@
 <?php
 
 function is_prime( $number ) {
-	if ( $number == 1 ) return false;
+	if ( abs( $number ) * 1 <= 1 ) return false;
 	for ( $i=2 ; $i<=sqrt( $number ) ; $i++ ) {
 		if ( $number % $i == 0 ) {
 			return false;
