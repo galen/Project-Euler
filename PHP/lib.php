@@ -35,6 +35,15 @@ function is_permutation( $array ) {
 
 }
 
+function get_proper_divisors( $n ) {
+	for( $i=1;$i<=ceil($n/2);$i++ ) {
+		if ( $n % $i == 0 ) {
+			$d[] = $i;
+		}
+	}
+	return $d;
+}
+
 function get_divisor_count( $n ) {
 	for( $i=1;$i<ceil(sqrt($n));$i++ ) {
 		if ( $n % $i == 0 ) {
