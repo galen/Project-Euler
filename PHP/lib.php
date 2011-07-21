@@ -1,5 +1,12 @@
 <?php
 
+function is_pandigital( $num, $max, $allow_zero = false ) {
+	if ( !$allow_zero && strpos( $num, '0' ) !== false ) {
+		return false;
+	}
+	return strlen( $num ) == $max && strlen( count_chars( $num, 3 ) ) == strlen( $num );
+}
+
 function is_prime( $number ) {
 	if ( abs( $number ) * 1 <= 1 ) return false;
 	for ( $i=2 ; $i<=sqrt( $number ) ; $i++ ) {
@@ -52,3 +59,4 @@ function get_divisor_count( $n ) {
 	}
 	return $c*2;
 }
+
