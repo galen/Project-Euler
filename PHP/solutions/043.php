@@ -1,18 +1,14 @@
 <?php
 
 function solution_43() {
-	foreach(new Permutations('0123456789') as $k => $v) {
-		if (
-			intval($v[1].$v[2].$v[3])%2 == 0 &&
-			intval($v[2].$v[3].$v[4])%3 == 0 &&
-			intval($v[3].$v[4].$v[5])%5 == 0 &&
-			intval($v[4].$v[5].$v[6])%7 == 0 &&
-			intval($v[5].$v[6].$v[7])%11 == 0 &&
-			intval($v[6].$v[7].$v[8])%13 == 0 &&
-			intval($v[7].$v[8].$v[9])%17 == 0
-		) {
-			$s += $v;
+	$primes = get_primes( 2,17 );
+	foreach(new Permutations('0123456789') as $v) {
+		foreach( $primes as $n => $p ) {
+			if ( intval( $v[$n+1].$v[$n+2].$v[$n+3] )%$p > 0 ) {
+				continue 2;
+			}
 		}
+		$s += $v;
     }
     return $s;
 }
