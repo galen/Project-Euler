@@ -1,9 +1,9 @@
 <?php
 
 function solution_3() {
-	foreach( range( ceil( sqrt( 600851475143 ) ), 3 ) as $number ) {
-		if ( 600851475143 % $number == 0 && is_prime( $number ) ) {
-			return $number;
+	for ( $i=ceil( sqrt( 600851475143 ) ); $i > 2; $i-- ) {
+		if ( 600851475143 % $i == 0 && is_prime( $i ) ) {
+			return $i;
 		}
 	}
 }
