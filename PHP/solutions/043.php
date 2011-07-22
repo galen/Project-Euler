@@ -9,8 +9,8 @@ function solution_43() {
 			}
 		}
 		$s += $v;
-    }
-    return $s;
+	}
+	return $s;
 }
 
 function answer_43() {
