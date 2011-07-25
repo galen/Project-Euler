@@ -125,3 +125,14 @@ function get_divisor_count( $n ) {
 	return $c*2;
 }
 
+function get_repeated_chars( $str ) {
+	preg_match( '~(.+)?\1~', $str, $m );
+	do {
+		preg_match( '~(\d+)\1~', $m[1], $t );
+		if ( count_chars( $t[1], 3 ) != count_chars( $m[1], 3 ) ) {
+			break;
+		}
+		$m = $t;
+	}while(1);
+	return $m[1];
+}

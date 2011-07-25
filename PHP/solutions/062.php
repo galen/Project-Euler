@@ -10,6 +10,7 @@ function solution_62() {
 	$t = array_count_values($cubes);
 	asort($t);
 	$tt = array_flip( $t );
+	print_r($tt);
 	return array_search( $tt[5], $cube );
 }
 
