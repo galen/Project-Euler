@@ -1,3 +1,4 @@
+
 <?php
 
 function solution_26() {
@@ -5,7 +6,7 @@ function solution_26() {
 		max(
 			$f = array_map(
 				function($n){
-					return strlen( get_repeated_chars( bcdiv( 1, $n, 10000 ) ) );
+					return strlen( get_repeated_chars( bcdiv( 1, $n, 2000 ) ) );
 				},
 				range(1,1000)
 	 		)
