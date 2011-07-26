@@ -92,7 +92,6 @@ function get_primes( $start, $end ) {
 }
 
 function is_permutation( $array ) {
-
 	$tmp = array();
 	foreach( $array as $t ) {
 		$tt = str_split( $t );
@@ -104,7 +103,6 @@ function is_permutation( $array ) {
 		return true;
 	}
 	return false;
-
 }
 
 function get_proper_divisors( $n ) {
@@ -113,6 +111,12 @@ function get_proper_divisors( $n ) {
 			$d[] = $i;
 		}
 	}
+	return $d;
+}
+
+function get_divisors( $n ) {
+	$d = get_proper_divisors( $n );
+	$d[] = $n;
 	return $d;
 }
 
