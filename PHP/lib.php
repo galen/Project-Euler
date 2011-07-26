@@ -140,3 +140,13 @@ function get_repeated_chars( $str ) {
 	}while(1);
 	return $m[1];
 }
+
+function get_rotations( $str ) {
+	$str = (string)$str;
+	$r[] = $str;
+	for( $i=0;$i<strlen( $str )-1;$i++ ) {
+		$str = substr( $str, 1 ) . $str[0];
+		$r[] = $str;
+	}
+	return $r;
+}
